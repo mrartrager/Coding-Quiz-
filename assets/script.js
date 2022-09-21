@@ -6,36 +6,46 @@ let points = document.getElementById("score");
 let quizSec = document.getElementById("quizSec");
 let scores = document.getElementById("scores");
 
+
+
+
 let quizQuestion = [
     {
-        question:, 
-        options:[
+        question:"",
+        options: [
             ""
         ],
         correctAnswer: "",
     }, 
     {
-        question:,
+        question:"",
         options: [
             ""
         ],
         correctAnswer: "",
     },
     {
-        question:, 
+        question:"", 
         options:[
             ""
         ],
         correctAnswer: "",
     }, 
     {
-        question:, 
+        question:"", 
         options:[
             ""
         ],
         correctAnswer: "",
     }, 
 ]
+
+function startQuiz() {
+    
+ 
+}
+
+
 
 
 startButton.addEventListener("click", startQuiz);
