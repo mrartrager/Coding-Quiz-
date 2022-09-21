@@ -11,32 +11,44 @@ let scores = document.getElementById("scores");
 
 let quizQuestion = [
     {
-        question:"",
+        question:"There are four champions in Legend of Zelda Breath of the Wild, Urbosa, Daruk, Revali and...?",
         options: [
-            ""
+            " A. Mipha ",
+            " B. Link ",
+            " C. Hyrule ",
+            " D. Vah Ruta ",
         ],
-        correctAnswer: "",
+        correctAnswer: " A. Mipha ",
     }, 
     {
-        question:"",
+        question:"What issue of Detective Comics did Batman first appear in?",
         options: [
-            ""
+            " A. Issue 1 ",
+            " B. Issue 27 ",
+            " C. Issue 16 ",
+            " D. Issue 86 ",
         ],
-        correctAnswer: "",
+        correctAnswer: "A. Isuue 27",
     },
     {
-        question:"", 
+        question:"How far is the James Webb Telescope from Earth?", 
         options:[
-            ""
+            " A. Trick question, its based on Earth ",
+            " B. 100,000 miles away from Earth ",
+            " C. The Earth is flat and everything we've been shown of space is fake. ",
+            " D. About 1 million miles away from Earth ",
         ],
-        correctAnswer: "",
+        correctAnswer: " D. About 1 million miles away from Earth ",
     }, 
     {
-        question:"", 
+        question:" Who was Anakin Skywalkers Padawan? ", 
         options:[
-            ""
+            " A. Darth Maul ",
+            " B. Captain Kirk ",
+            " C. Ahsoka Tano ",
+            " D. Obi Wan Kenobi ",
         ],
-        correctAnswer: "",
+        correctAnswer: " C. Ahsoka Tano ",
     }, 
 ]
 
