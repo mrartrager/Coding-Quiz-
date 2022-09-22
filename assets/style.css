@@ -1,13 +1,113 @@
+html, body {
+    height: 100%;
+} 
+
 body {
     font-family: Helvetica;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient( #e6dada, #274046);
 }
+
+html, body {
+    height: 100%;
+    text-align: center;
+} 
 
 .header {
     text-align: center;
-    background-color: skyblue;
+    text-shadow: 0px 4px 10px rgba(179, 147, 211, 0.8)
 }
 
-/* #quizSec {
-    display: none;
-} */
+#startQuizBtn {
+    border: 0 solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 950ms cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 10px;
+    margin: 10px;
+}
+
+#startQuizBtn:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 150px;
+  text-shadow: 1px 1px 2px #427388; 
+}
+
+#highScoreBtn {
+    border: 0 solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 950ms cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 10px;
+    margin: 10px;
+}
+
+#highScoreBtn:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 150px;
+    text-shadow: 1px 1px 2px #427388; 
+}
+
+#submitButton {
+    border: 0 solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 950ms cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 10px;
+    margin: 10px;
+}
+
+#submitButton:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 150px;
+    text-shadow: 1px 1px 2px #427388; 
+}
+
+#resetBtn {
+    border: 0 solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 950ms cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 10px;
+    margin: 10px;
+}
+
+#resetBtn:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 150px;
+    text-shadow: 1px 1px 2px #427388; 
+}
+
+#playAgainBtn {
+    border: 0 solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 950ms cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 10px;
+    margin: 10px;
+}
+
+#playAgainBtn:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 150px;
+    text-shadow: 1px 1px 2px #427388; 
+}
