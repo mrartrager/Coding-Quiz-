@@ -14,15 +14,20 @@
 
 <body>
     <header class="header">
-        <h1>Welcome to the Code Quiz!</h1>
-        <h3>This is only called a code quiz because I coded it, the questions have nothing to do with code. Enjoy.</h3>
+        <h1 class="welcome">Welcome to the Code Quiz!</h1>
+        <h3>This is only called a code quiz because I coded it, the questions have nothing to do with code. Enjoy :) </h3>
     </header>
 
     <main>
         <section>
             <button id="startQuizBtn" onclick="showQuestions">Start Quiz</button>
             <br>
+
+            <div class="mainContent">
+            <p class="intro">Answer the following questions before time runs out! Wrong answers will take time off the clock. </p>
+
             <button id="highScoreBtn">View High Scores</button>
+
             <article id="quizSec" class="">
                 <h1 id="question">Question:</h1>
                 <div id="options">
@@ -32,8 +37,9 @@
                     <span id="option4"></span>
                 </div>
 
-                <label>Score:</label>
-                <span id="score">0</span>
+                <label id="score">Score:</label>
+                <br>
+                <span id="score"></span>
                 <label id="clock">Timer</label>
                 <span id="timer">60s</span>
             </article>
@@ -56,6 +62,7 @@
                 <button id="playAgainBtn">Play again?</button>
             </article>
         </section>
+    </div>
     </main>
 
     <footer>

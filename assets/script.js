@@ -8,13 +8,7 @@ let scores = document.getElementById("finalScore"); // dont get confused with sc
 let resetButton = document.getElementById("resetBtn"); // rest highscore sheet
 let playAgainButton = document.getElementById("playAgainBtn"); // starts quiz over
 let timeRemaining = 60; // clock starts at 60, pretty sure i can write into a function and delete this
-
-
-let currentQuestion = null;
-let userChoice = -1;
-let userScore = 0;
-let timerObject = null;
-let timer = 60;
+let startingPage = document.querySelector(".mainContent");
 
 let quizQuestion = [
   {
@@ -56,15 +50,18 @@ let quizQuestion = [
 ];
 
 function startQuiz() {
-  startButton.style.visibility = "hidden";
-  quizSec.style.visibility = "visible";
-  scores.style.visibility = "hidden";
+ 
+  document.querySelector(".mainContent").show
   timer = 60;
   timerObject = setInterval(gameLoop, 1000);
 }
 
 function gameLoop() {
   timer--;
+  if ( timer === 0) {
+    alert('Time is up');
+    return 0;
+}
   updateUserUI();
   if (userChoice != -1) {
     if (isUserCorrect()) {
@@ -78,15 +75,10 @@ function gameLoop() {
     userChoice = -1;
     loadQuestion();
   }
-  if (timer <= 0) {
-    clearInterval(timerObject);
-    highScore();
-  }
 }
 
 function updateUserUI() {
-  timerClock.innerHTML = `${timer}s`;
-  points.innerHTML = userScore;
+  timerClock.innerHTML = timer;
 }
 
 startButton.addEventListener("click", startQuiz);
