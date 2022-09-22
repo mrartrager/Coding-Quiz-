@@ -1,14 +1,15 @@
 let startButton = document.getElementById("startQuizBtn");
 let highScore = document.getElementById("highScoreBtn");
 let quizSec = document.getElementById("quizSec"); //quizSec stands for quiz section line 25 of HTML
-let choices = document.getElementById("options");
+let choices = document.getElementById("options"); // write a functio
 let points = document.getElementById("score"); // this is score that will change through the game not final score
 let timerClock = document.getElementById("timer"); //will write a function to start timer on button click start quiz
 let scores = document.getElementById("finalScore"); // dont get confused with score, this is final score
 let resetButton = document.getElementById("resetBtn"); // rest highscore sheet
 let playAgainButton = document.getElementById("playAgainBtn"); // starts quiz over
-let timeRemaining = 60; // clock starts at 60, pretty sure i can write into a function and delete this
+let timeRemaining = 0; // clock starts at 60, pretty sure i can write into a function and delete this
 let startingPage = document.querySelector(".mainContent");
+
 
 let quizQuestion = [
   {
@@ -47,39 +48,47 @@ let quizQuestion = [
     ],
     correctAnswer: " C. Ahsoka Tano ",
   },
+  {
+    question:
+      "In Brandon Sandersons novel series The Stormlight Archive what is Kaladins spren named?",
+    options: [" A. Shallan ", " B. Syl ", " C. Adolin ", " D. Dalinar "],
+    correctAnswer: " B. Syl ",
+  },
 ];
 
-function startQuiz() {
+
+// timer functionality 
+// function startQuiz() {
  
-  document.querySelector(".mainContent").show
-  timer = 60;
-  timerObject = setInterval(gameLoop, 1000);
-}
+//   document.querySelector(".mainContent").show
+//   timer = 60;
+//   timerObject = setInterval(clock, 1000);
+// }
 
-function gameLoop() {
-  timer--;
-  if ( timer === 0) {
-    alert('Time is up');
-    return 0;
-}
-  updateUserUI();
-  if (userChoice != -1) {
-    if (isUserCorrect()) {
-      userScore++;
-    } else {
-      userScore--;
-      timer -= 5;
-      updateUserUI();
-    }
-    updateUserUI();
-    userChoice = -1;
-    loadQuestion();
-  }
-}
+// function clock() {
+//   timer--;
+//   if ( timer === 0) {
+//     alert('Time is up');
+//     return timer === 0;
+// }
+//   updateClock();
+//   if (userChoice != -1) {
+//     if (isUserCorrect()) {
+//       userScore++;
+//     } else {
+//       userScore--;
+//       timer -= 5;
+//       updateClock();
+//     }
+//     updateClock();
+//     userChoice = -1;
+//     loadQuestion();
+//   }
+// }
 
-function updateUserUI() {
-  timerClock.innerHTML = timer;
-}
+// function updateClock() {
+//   timerClock.innerHTML = timer;
+// }
 
 startButton.addEventListener("click", startQuiz);
 playAgainButton.addEventListener("click", startQuiz);
