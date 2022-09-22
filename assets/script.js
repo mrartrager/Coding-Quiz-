@@ -1,11 +1,19 @@
 let startButton = document.getElementById("startQuizBtn");
-let resetButton = document.getElementById("resetBtn");
-let playAgainButton= document.getElementById("playAgainBtn");
-let timerClock = document.getElementById("timer");
-let points = document.getElementById("score");
-let quizSec = document.getElementById("quizSec");
-let scores = document.getElementById("scores");
+let highScore = document.getElementById("highScoreBtn");
+let quizSec = document.getElementById("quizSec");  //quizSec stands for quiz section line 25 of HTML
+let choices = document.getElementById("options");
+let points = document.getElementById("score"); // this is score that will change through the game not final score
+let timerClock = document.getElementById("timer");  //will write a function to start timer on button click start quiz
+let scores = document.getElementById("finalScore"); // dont get confused with score, this is final score
+let resetButton = document.getElementById("resetBtn"); // rest highscore sheet
+let playAgainButton= document.getElementById("playAgainBtn"); // starts quiz over
+let timeRemaining = 60; // clock starts at 60, pretty sure i can write into a function and delete this 
 
+let currentQuestion = null;
+let userChoice = -1;
+let userScore = 0;
+let timerObject = null;
+let timer = 60;
 
 
 
@@ -53,13 +61,57 @@ let quizQuestion = [
 ]
 
 function startQuiz() {
-    
- 
+    startButton.style.visibility = "hidden";
+    quizSec.style.visibility = "visible";
+    scores.style.visibility = "hidden";
+
+    timer = 60;
+    timerObject = setInterval(gameLoop, 1000);
+}
+
+function gameLoop() {
+    // Update the timer
+    timer--;
+    updateUserUI();
+    if (userChoice != -1) {
+        if (isUserCorrect()) { // If it was correct...
+            userScore++; // Increase score
+        } else {
+            userScore--; // Decrease score and timer and update the timer
+            timer -= 5;
+            updateUserUI();
+        }
+
+        // Whether the user got it right or wrong...
+        updateUserUI(); // Update Score
+        userChoice = -1; // Reset choice
+        loadQuestion(); // New question
+    }
+
+    // If time ran out...
+    if (timer <= 0) {
+        clearInterval(timerObject) // Break out of this
+        showHighScore();
+    };
+}
+
+  function loadQuestion() {
+    currentQuestion = randomFrom(codeQuiz);
+    document.getElementById("question").innerHTML = currentQuestion.question;
+
+    [0, 1, 2, 3].forEach(i => {
+        choiceSpans[i].innerHTML = currentQuestion.options[i];
+    });
+}
+
+function updateUserUI() {
+    timerClock.innerHTML = `${timer}s`;
+    points.innerHTML = userScore; // Update Score
 }
 
 
 
 
 startButton.addEventListener("click", startQuiz);
-playAgain.addEventListener("click", startQuiz);
-resetButton.addEventListener("click", resetQuiz);
+playAgainButton.addEventListener("click", startQuiz);
+//resetButton.addEventListener("click", resetQuiz);

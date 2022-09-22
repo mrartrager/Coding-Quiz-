@@ -1,3 +1,13 @@
 body {
     font-family: Helvetica;
+    background-color: aquamarine;
+}
+
+.header {
+    text-align: center;
+    background-color: skyblue;
+}
+
+#quizSec {
+    display: none;
 }

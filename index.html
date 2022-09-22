@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylsheet" src="assets/reset.css" />
     <link rel="stylesheet" src="assets/style.css" />
-
+    <link rel="stylsheet" src="assets/reset.css" />
+   
     <title>Coding Quiz!!</title>
 
 </head>
@@ -21,7 +21,8 @@
     <main>
         <section>
             <button id="startQuizBtn">Start Quiz</button>
-
+            <br>
+            <button id="highScoreBtn">View High Scores</button>
             <article id="quizSec" class="">
                 <h1 id="question">Question:</h1>
                 <div id="options">
@@ -38,18 +39,19 @@
             </article>
 
             <section>
-                <h2>Your score: <span id="yourScore">0</span></h2>
+                <h2>Your score: <span id="finalScore">0</span></h2>
 
                 <form class="column">
                     <div>
                         <label for="initials">Put your intials here!!</label>
                         <input type="text" name="initials" id="initials" placeholder="Initials"></input>
                     </div>
-                    <button type="submit" id="saveButton">Save</button>
+                    <button type="submit" id="submitButton">Submit</button>
                 </form>
             </section>
 
             <article id="scores">
+
                 <button id="resetBtn">Reset Score</button>
                 <button id="playAgainBtn">Play again?</button>
             </article>
