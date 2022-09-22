@@ -9,6 +9,7 @@ let resetButton = document.getElementById("resetBtn"); // rest highscore sheet
 let playAgainButton = document.getElementById("playAgainBtn"); // starts quiz over
 let timeRemaining = 60; // clock starts at 60, pretty sure i can write into a function and delete this
 
+
 let currentQuestion = null;
 let userChoice = -1;
 let userScore = 0;
