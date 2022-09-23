@@ -1,0 +1,17 @@
+
+/* == font and gradient background  == */
+body {
+    font-family: Helvetica;
+    background: linear-gradient( #e6dada, #274046);
+}
+
+html, body {
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(99, 99, 99, 0.8)
+} 
+
+.welcome {
+    font-size: 60px;
+    padding: 50px;    
+}
+
