@@ -9,11 +9,56 @@
     <title>Code Quiz!!!</title>
 </head>
 <body>
-
-
-
-
+    <div>
+        <div>
+            <!--staring page, first thing user will see-->
+            <section id="welcomePage">
+                <h1 class="welcome">Welcome to mt Code Quiz!</h1>
+                <h3>Enjoy some super extra nerdy questions, goodluck! </h3>     
+                <p class="intro">Answer the following questions before time runs out! Wrong answers will take time off the clock. </p>
+                <button id="startQuizBtn">Start Quiz</button>
+                <button id="highScoreBtn">View High Scores</button>
+            </section>
     
+<!--quiz section-->
+    <section id="quizSection">
+        <div id="timer">Time left: </div>
+        <div id="questions"><p>Questions</p></div>
+        <button id="A" >A</button>
+        <button id="B" >B</button>
+        <button id="C" >C</button>
+        <button id="D" >D</button>
+        <div id="result"></div>
+    </section>
+
+    <div id="gameover">
+        <div id="finalScore"></div>
+        <input type="text" name="initials" id="initials" placeholder="Initial here, cause you rock!"></input>
+        <button type="submit" id="submitButton">Submit</button>
+    </div>
+
+<!--highscore page-->
+    <section id="highScore">
+        <div id="highScorePage">
+            <div id="highScoreHeader">
+                <h2>Player Initials</h2>
+                <h2>Score</h2>
+            </div>
+    <div id ="highScoreUser"></div>
+    <div id ="Userscore"></div>
+        </div>
+        <div id="Reset">
+            <button id="playAgainBtn">Play Again</button>
+            <button id="clearHighscore">Clear Highscores</button>
+        </div>
+    </section>
+    
+        </div>
+    </div>
+
+
+
+<!--JavaScript Link-->
     <script src="./assets/script.js"></script>
 </body>
 </html>
