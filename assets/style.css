@@ -15,6 +15,10 @@ html, body {
     padding: 50px;    
 }
 
+.intro, #timer, #clock {
+    color: white;
+   }
+
 #reset, #quizSection, #result, #gameover, #high-scorePage, #highscore {
     display: none;
 }

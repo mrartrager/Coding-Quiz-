@@ -57,12 +57,32 @@ let quizQuestions = [{
   correctAnswer: "D"},
 ];
 
-function startQuiz(){
 
+let timerInterval;
+let timeLeft = 60;
+
+function startQuiz(){
+lostGame.style.display = "none";
+welcomeSection.style.display = "none";
+generateQuizQuestion();
+
+//timer
+timerInterval = setInterval(function() 
+{
+  timeRemaining--;
+  timerClock.textContent = timeRemaining;
+
+  if(timeLeft === 0) {
+    clearInterval(timerInterval);
+    showScore();
+  }
+}, 1000);
+quizContent.style.display = "block";
 }
 
+// new function
 
 function generateQuizQuestion(){
-
+  
 }
 
