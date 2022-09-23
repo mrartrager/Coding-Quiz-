@@ -1,3 +1,4 @@
+// Variables brought in javascript from html ID's
 let welcomeSection = document.getElementById("welcomePage");
 let startButton = document.getElementById("startQuizBtn");
 let quizContent = document.getElementById("quizSection");
@@ -16,7 +17,9 @@ let highscoreDiv = document.getElementById("highscorePage");
 let userName = document.getElementById("highScoreUser");
 let showHighScore = document.getElementById("Userscore");
 let clear = document.getElementById("Reset");
+let timeRemaining = 60;
 
+// Questions for Quiz
 let quizQuestions = [{
   question: " There are four champions in Legend of Zelda Breath of the Wild, Urbosa, Daruk, Revali and...?",
   OptionA: " Mipha",
@@ -52,6 +55,14 @@ let quizQuestions = [{
   OptionC: " By the Seafoam Islands ",
   OptionD: " Goldenrod Tower ",
   correctAnswer: "D"},
-
-
 ];
+
+function startQuiz(){
+
+}
+
+
+function generateQuizQuestion(){
+
+}
+
