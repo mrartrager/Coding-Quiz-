@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+
+    font-family: 'Secular One', sans-serif;
+}
+
+*::selection {
+
+    background: rgb(136, 136, 136);
+    color: rgb(255, 145, 0);
+  }
+
 
 /* == font and gradient background  == */
 body {
-    font-family: 'Secular One', sans-serif;
-    background: linear-gradient( #e6dada, #274046);
+    
+    background: linear-gradient(#E6DADA, #274046); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,58 +23,89 @@ body {
 }
 
 html, body {
-    font-family: 'Secular One', sans-serif;
+    
     text-align: center;
     text-shadow: 5px 5px 10px rgba(99, 99, 99, 0.8)
 } 
 
 .welcome {
-    font-family: 'Secular One', sans-serif;
+
     font-size: 70px;
     padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.start {
+
+    margin-top: 100px;
+    padding: 50px;
+    padding-right: 200px;
+    padding-left: 200px;
 }
 
 #questions {
-    font-family: 'Secular One', sans-serif;
-    font-size: 20px;
+   
+    font-size: 60px;
     color:white;
+    margin: 50px;
 }
+
+#timer {
+    
+    font-size: 100px;
+    color:white;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.viewHighScore {
+    
+    margin-top: 50px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+
 .nerdy {
-    font-family: 'Secular One', sans-serif;
+   
     color:white;
     font-size: 30px;
     padding: 50px;  
 }
 
 .intro, #timer, #clock #score {
-    font-family: 'Secular One', sans-serif;
+   
     color: white;
    }
 
-#reset, #quizSection, #result, #gameover, #high-scorePage, #highscore {
+#reset, #quizSection, #result, #gameover, #highScoreHeader, #highscore, #highScorePage {
     display: none;
 }
 
 button{
-    font-family: 'Secular One', sans-serif;
-    border: 5px solid;
-    box-shadow: inset 0 0 100px #95fed0;
+
+    text-decoration-color: #ffffff;
+    border: 10px solid;
+    box-shadow: inset 0 0 5px  #000000;
     outline: 5px solid;
     border-radius: 20px;
-    border: 5px solid #cbcbcb;
-    outline-color: rgba(255, 255, 255, .5);
+    border: 5px solid rgb(255, 247, 0);
+    outline-color: rgba(255, 255, 255, 0.419);
     outline-offset: 0px;
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 550ms cubic-bezier(0.50, 1, .50, 1);
     padding: 20px;
-    margin: 20px;
-    background-color:#f0c17f;
+    margin: 50px;
+    background-color: #cdcdcd;
     cursor: pointer;
 }
 
 button:hover {
+
+    background-color: #ffffff;
     border: 2px solid;
-    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5), 0 0 100px rgba(255, 255, 255, .2);
-    box-shadow: 100px rgba(255, 255, 255, .5);
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, .5);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 150px;
     text-shadow: 5px 5px 5px #427388; 

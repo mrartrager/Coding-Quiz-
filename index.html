@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <link rel="stylesheet" type="text/css" href="./assets/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+        </style>
     <title>Code Quiz!!!</title>
 </head>
 <body>
@@ -19,8 +22,8 @@
                 <h1 class="welcome">Welcome to my Code Quiz!</h1>
                 <h3 class="nerdy">Enjoy some super extra nerdy questions, goodluck! </h3>     
                 <p class="intro">Answer the following questions before time runs out! Wrong answers will take time off the clock. </p>
-                <button id="startQuizBtn">Start Quiz</button>
-                <button id="highScoreBtn" onclick="viewHighscores()">View High Scores</button>
+                <button id="startQuizBtn" class="start">Start Quiz</button>
+               
             </section>
     
 <!--quiz section-->
@@ -31,6 +34,7 @@
         <button id="B" onclick="checkAnswer('B')">B</button>
         <button id="C" onclick="checkAnswer('C')">C</button>
         <button id="D" onclick="checkAnswer('D')">D</button>
+        
         <div id="result"></div>
     </section>
 
@@ -38,20 +42,25 @@
         <div id="finalScore"></div>
         <input type="text" name="initials" id="initials" placeholder="Initial here, cause you rock!"></input>
         <button type="submit" id="submitButton">Submit</button>
+       
     </div>
 
 <!--highscore page-->
     <section id="highScore">
         <div id="highScorePage">
             <div id="highScoreHeader">
+                <div id ="Username"></div>
+                <div id ="Userscore"></div>
                 <h2>Player Initials</h2>
                 <h2>Score</h2>
+                <button id="highScoreBtn" class="viewHighScore" >View High Scores</button>
             </div>
-    <div id ="highScoreUser"></div>
-    <div id ="Userscore"></div>
+    <!-- <div id ="Username"></div>
+    <div id ="Userscore"></div> -->
         </div>
         <div id="Reset">
-            <button id="playAgainBtn" onclick="replayQuiz()">Play Again</button>
+            <button id="highScoreBtn" class="viewHighScore" >View High Scores</button>
+           <button id="playAgainBtn" onclick="replayQuiz()">Play Again</button>
             <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
         </div>
     </section>

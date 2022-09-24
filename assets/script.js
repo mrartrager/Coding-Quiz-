@@ -14,15 +14,15 @@ let submitScoreBtn = document.getElementById("submitButton");
 let userInitials = document.getElementById("initials");
 let highscoreSection = document.getElementById("highscore");
 let highscoreDiv = document.getElementById("highscorePage");
-let userName = document.getElementById("highScoreUser");
+let userName = document.getElementById("Username");
 let showHighScore = document.getElementById("Userscore");
-let clear = document.getElementById("Reset");
+let clear = document.getElementById("playAgainBtn");
 let timeRemaining = 60;
 let score = 0;
 
 // Questions for Quiz
 let quizQuestions = [{
-  question: " There are four champions in Legend of Zelda Breath of the Wild, Urbosa, Daruk, Revali and...?",
+  question: " There are four champions in Legend of Zelda Breath of the Wild: Urbosa, Daruk, Revali and...?",
   OptionA: " Mipha",
   OptionB: " Link",
   OptionC: " Hyrule",
@@ -96,6 +96,7 @@ timerInterval = setInterval(function()
   timeRemaining--;
   timerClock.textContent = timeRemaining;
 
+
   if(timeLeft === 0) {
     clearInterval(timerInterval);
     showScore();
@@ -119,7 +120,7 @@ function showScore() {
 submitScoreBtn.addEventListener("click", function highscore(){
 
   if(userInitials.value === "") {
-    alert("ay silly, you can't submit a blank form, enter your initials");
+    alert("Ay silly, you can't submit a blank form, enter your initials");
     return false;
   } else {
     let savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
@@ -128,18 +129,16 @@ submitScoreBtn.addEventListener("click", function highscore(){
       name : currentUser,
       score : score
     };
-    lostGame.style.display = "none";
-    highscoreSection.style.display = "flex";
-    highscoreDiv.style.display = "block";
-    clear.style.display = "flex";
     savedHighscores.push(currentHighscore);
     localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
     generateHighscores();
   }
 });
 
+
+// new function //
 function generateHighscores() {
-  userName.innerHTML = "",
+  userName.innerHTML = "", //userName = document.getElementById("Username")
   showHighScore.innerHTML = "";
   let highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
   for (i=0; i < highscores.length; i++){
@@ -152,14 +151,17 @@ function generateHighscores() {
   }
 };
 
+
+// new function // 
 function showHighscore() {
-  welcomeSection.style.display = "none";
-  lostGame.style.display = "none";
-  highscoreSection.style.display = "flex";
-  highscoreDiv.style.display = "block";
-  clear.style.display = "flex";
+  highscoreSection.style.display = "none";
+  highscoreDiv.style.display = "none";
+  clear.style.display = "nobe";
 generateHighscores()
 }
+
+
+//new function // 
 
 function clearScore(){
   window.localStorage.clear();
@@ -167,10 +169,10 @@ function clearScore(){
   showHighScore.textContent = "";
 }
 
+
+// new function // 
 function replayQuiz() {
-  highscoreSection.style.display = "none";
-  lostGame.style.display = "none";
-  welcomeSection.style.display = "flex";
+
   timeRemaining = 60;
   score = 0;
   currentQuestionOn = 0;
@@ -178,6 +180,7 @@ function replayQuiz() {
 
 
 
+// new function // 
 let correct;
 
 function checkAnswer(answer){
@@ -187,12 +190,10 @@ function checkAnswer(answer){
       score++;
       currentQuestionOn++;
       generateQuizQuestion();
-      //display in the results div that the answer is correct.
   }else if (answer !== correct && currentQuestionOn !== finalQuestionOn){
       currentQuestionOn++;
       alert("sorry wrong answer")
       generateQuizQuestion();
-      //display in the results div that the answer is wrong.
   }else{
       showScore();
   }
@@ -201,4 +202,5 @@ function checkAnswer(answer){
 
 
 startButton.addEventListener("click", startQuiz);
-playAgainButton.addEventListener("click", startQuiz);
+clear.addEventListener("click", startQuiz);
+highscoreSection.addEventListener("click", showHighscore); // not working
