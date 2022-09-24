@@ -58,6 +58,29 @@ let quizQuestions = [{
 ];
 
 
+// new function // 
+
+let currentQuestionOn = 0;
+let finalQuestionOn = quizQuestions.length;
+
+
+function generateQuizQuestion(){
+  lostGame.style.display = "none";
+  if (currentQuestionOn === finalQuestionOn){
+    return showScore();
+  }
+  let currentQuestion = quizQuestions[currentQuestionOn];
+  questionsEl.innerHTML = "<p>" + currentQuestion.question + "<p>";
+  buttonA.innerHTML = currentQuestion.OptionA;
+  buttonB.innerHTML = currentQuestion.OptionB;
+  buttonC.innerHTML = currentQuestion.OptionC;
+  buttonD.innerHTML = currentQuestion.OptionD;
+};
+
+
+
+// new function //
+
 let timerInterval;
 let timeLeft = 60;
 
@@ -80,9 +103,37 @@ timerInterval = setInterval(function()
 quizContent.style.display = "block";
 }
 
-// new function
 
-function generateQuizQuestion(){
-  
+// new function // 
+
+function showScore() {
+  quizContent.style.display = "none";
+  lostGame.style.display = "flex";
+  clearInterval(timerInterval);
+  userInitials.value = "";
+  finalScoreEl.innerHTML = "you got" + score + " out of " + quizQuestions.length + " correct!";
 }
 
+
+
+submitScoreBtn.addEventListener("click", function highscore(){
+
+  if(userInitials.value === "") {
+    alert("ay silly, you can't submit a blank form, enter your initials");
+    return false;
+  } else {
+    let savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    let currentUser = highscoreInputName.value.trim();
+    let currentHighscore = {
+      name : currentUser,
+      score : score
+    };
+    lostGame.style.display = "none";
+    highscoreSection.style.display = "flex";
+    highscoreDiv.style.display = "block";
+    clear.style.display = "flex";
+    savedHighscores.push(currentHighscore);
+    localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+    generateHighscores();
+  }
+});
