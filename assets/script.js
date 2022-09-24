@@ -115,7 +115,6 @@ function showScore() {
 }
 
 
-
 submitScoreBtn.addEventListener("click", function highscore(){
 
   if(userInitials.value === "") {
@@ -137,3 +136,26 @@ submitScoreBtn.addEventListener("click", function highscore(){
     generateHighscores();
   }
 });
+
+function generateHighscores() {
+  userName.innerHTML = "",
+  showHighScore.innerHTML = "";
+  let highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+  for (i=0; i < highscores.length; i++){
+    let newNameSpan = document.createElement("li");
+    let newScoreSpan = document.createElement("li");
+    newNameSpan.textContent = highscores[i].name;
+    newScoreSpan.textContent = highscores[i].name;
+    userName.appendChild(newNameSpan);
+    showHighScore.appendChild(newScoreSpan);
+  }
+};
+
+function showHighscore() {
+  welcomeSection.style.display = "none";
+  lostGame.style.display = "none";
+  highscoreSection.style.display = "flex";
+  highscoreDiv.style.display = "block";
+  clear.style.display = "flex";
+generateHighscores()
+}
