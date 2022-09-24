@@ -17,7 +17,7 @@
                 <h3 class="nerdy">Enjoy some super extra nerdy questions, goodluck! </h3>     
                 <p class="intro">Answer the following questions before time runs out! Wrong answers will take time off the clock. </p>
                 <button id="startQuizBtn">Start Quiz</button>
-                <button id="highScoreBtn">View High Scores</button>
+                <button id="highScoreBtn" onclick="viewHighscores()">View High Scores</button>
             </section>
     
 <!--quiz section-->
@@ -48,16 +48,13 @@
     <div id ="Userscore"></div>
         </div>
         <div id="Reset">
-            <button id="playAgainBtn">Play Again</button>
-            <button id="clearHighscore">Clear Highscores</button>
+            <button id="playAgainBtn" onclick="replayQuiz()">Play Again</button>
+            <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
         </div>
     </section>
     
         </div>
     </div>
-
-
-
 <!--JavaScript Link-->
     <script src="./assets/script.js"></script>
 </body>

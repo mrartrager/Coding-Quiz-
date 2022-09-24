@@ -18,6 +18,7 @@ let userName = document.getElementById("highScoreUser");
 let showHighScore = document.getElementById("Userscore");
 let clear = document.getElementById("Reset");
 let timeRemaining = 60;
+let score = 0;
 
 // Questions for Quiz
 let quizQuestions = [{
@@ -159,3 +160,45 @@ function showHighscore() {
   clear.style.display = "flex";
 generateHighscores()
 }
+
+function clearScore(){
+  window.localStorage.clear();
+  userName.textContent = "";
+  showHighScore.textContent = "";
+}
+
+function replayQuiz() {
+  highscoreSection.style.display = "none";
+  lostGame.style.display = "none";
+  welcomeSection.style.display = "flex";
+  timeRemaining = 60;
+  score = 0;
+  currentQuestionOn = 0;
+}
+
+
+
+let correct;
+
+function checkAnswer(answer){
+  correct = quizQuestions[currentQuestionOn].correctAnswer;
+
+  if (answer === correct && currentQuestionOn !== finalQuestionOn){
+      score++;
+      currentQuestionOn++;
+      generateQuizQuestion();
+      //display in the results div that the answer is correct.
+  }else if (answer !== correct && currentQuestionOn !== finalQuestionOn){
+      currentQuestionOn++;
+      alert("sorry wrong answer")
+      generateQuizQuestion();
+      //display in the results div that the answer is wrong.
+  }else{
+      showScore();
+  }
+}
+
+
+
+startButton.addEventListener("click", startQuiz);
+playAgainButton.addEventListener("click", startQuiz);
