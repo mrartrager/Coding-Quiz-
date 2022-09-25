@@ -17,7 +17,7 @@ let highscoreDiv = document.getElementById("highscorePage");
 let userName = document.getElementById("Username");
 let showHighScore = document.getElementById("Userscore");
 let clear = document.getElementById("playAgainBtn");
-let timeRemaining = 60;
+// let timeRemaining = 60;
 let score = 0;
 
 // Questions for Quiz
@@ -58,6 +58,32 @@ let quizQuestions = [{
   correctAnswer: "D"},
 ];
 
+// new function //
+
+let timerInterval;
+let timeLeft = 60;
+
+function startQuiz(){
+lostGame.style.display = "none";
+welcomeSection.style.display = "none";
+generateQuizQuestion();
+
+//timer
+timerInterval = setInterval(function() 
+{
+  timeLeft--;
+  timerClock.textContent = timeLeft;
+
+
+  if(timeLeft === 0) {
+    clearInterval(timerInterval);
+    window.alert("TIMES UP!!");
+    showScore();
+  }
+}, 1000);
+quizContent.style.display = "block";
+}
+
 
 // new function // 
 
@@ -79,31 +105,6 @@ function generateQuizQuestion(){
 };
 
 
-
-// new function //
-
-let timerInterval;
-let timeLeft = 60;
-
-function startQuiz(){
-lostGame.style.display = "none";
-welcomeSection.style.display = "none";
-generateQuizQuestion();
-
-//timer
-timerInterval = setInterval(function() 
-{
-  timeRemaining--;
-  timerClock.textContent = timeRemaining;
-
-
-  if(timeLeft === 0) {
-    clearInterval(timerInterval);
-    showScore();
-  }
-}, 1000);
-quizContent.style.display = "block";
-}
 
 
 // new function // 
@@ -192,12 +193,14 @@ function checkAnswer(answer){
       generateQuizQuestion();
   }else if (answer !== correct && currentQuestionOn !== finalQuestionOn){
       currentQuestionOn++;
-      alert("sorry wrong answer")
+      window.alert("Sorry wrong answer!");
       generateQuizQuestion();
   }else{
       showScore();
   }
 }
+
+
 
 
 
