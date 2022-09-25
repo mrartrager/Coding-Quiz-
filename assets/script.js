@@ -20,6 +20,7 @@ let clear = document.getElementById("playAgainBtn");
 // let timeRemaining = 60;
 let score = 0;
 
+
 // Questions for Quiz
 let quizQuestions = [{
   question: " There are four champions in Legend of Zelda Breath of the Wild: Urbosa, Daruk, Revali and...?",
@@ -43,7 +44,7 @@ let quizQuestions = [{
   OptionD: " Obi Wan Kenobi ",
   correctAnswer: "C"},
   {
-  question: "In Brandon Sandersons novel series The Stormlight Archive what is Kaladins spren named?",
+  question: "In Brandon Sandersons novel series The Stormlight Archive, what is Kaladins spren named?",
   OptionA: " Shallan ",
   OptionB: " Syl ",
   OptionC: " Adolin ",
@@ -56,12 +57,28 @@ let quizQuestions = [{
   OptionC: " By the Seafoam Islands ",
   OptionD: " Goldenrod Tower ",
   correctAnswer: "D"},
+  {
+  question: "What Disney movie did Daft Punk do the original score for?",
+  OptionA: " Tron Legacy ",
+  OptionB: " Lilo & Stitch ",
+  OptionC: " The Nightmare Before Christmas ",
+  OptionD: " Wall-E ",
+  correctAnswer: "A"},
+  {
+  question: "In the Watchmen graphic novel, how does Dr.Manhattan get his powers?",
+  OptionA: " We never actually find out ",
+  OptionB: " Ozmandias gave Dr.Mannhattan his powers on accident ",
+  OptionC: " Dr.Manhattan was caught in a radioactive particle test ",
+  OptionD: " He's from an alternate universe where everyone has powers ",
+  correctAnswer: "C"}
 ];
+
+
 
 // new function //
 
 let timerInterval;
-let timeLeft = 60;
+let timeLeft = 101;
 
 function startQuiz(){
 lostGame.style.display = "none";
@@ -118,20 +135,22 @@ function showScore() {
 }
 
 
-submitScoreBtn.addEventListener("click", function highscore(){
+submitScoreBtn.addEventListener("click", function(event){
+event.preventDefault()
+console.log("inside submit button")
 
   if(userInitials.value === "") {
     alert("Ay silly, you can't submit a blank form, enter your initials");
     return false;
   } else {
-    let savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
-    let currentUser = highscoreInputName.value.trim();
+    let savedHighscores = JSON.parse(localStorage.getItem("highscore")) || [];
+    let currentUser = userInitials.value.trim();
     let currentHighscore = {
       name : currentUser,
       score : score
     };
     savedHighscores.push(currentHighscore);
-    localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+    localStorage.setItem("highscore", JSON.stringify(savedHighscores));
     generateHighscores();
   }
 });
@@ -141,7 +160,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
 function generateHighscores() {
   userName.innerHTML = "", //userName = document.getElementById("Username")
   showHighScore.innerHTML = "";
-  let highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+  let highscores = JSON.parse(localStorage.getItem("highscore")) || [];
   for (i=0; i < highscores.length; i++){
     let newNameSpan = document.createElement("li");
     let newScoreSpan = document.createElement("li");
@@ -173,8 +192,8 @@ function clearScore(){
 
 // new function // 
 function replayQuiz() {
-
-  timeRemaining = 60;
+ startQuiz
+  timeLeft = 101;
   score = 0;
   currentQuestionOn = 0;
 }
@@ -183,18 +202,26 @@ function replayQuiz() {
 
 // new function // 
 let correct;
+let displayTime = 5;
 
 function checkAnswer(answer){
   correct = quizQuestions[currentQuestionOn].correctAnswer;
 
   if (answer === correct && currentQuestionOn !== finalQuestionOn){
+    document.getElementById("answerFeedback").innerHTML="Woohoo previous question was correct ."
       score++;
       currentQuestionOn++;
+      // document.getElementById("answerFeedback").innerHTML="correct"
       generateQuizQuestion();
   }else if (answer !== correct && currentQuestionOn !== finalQuestionOn){
       currentQuestionOn++;
       window.alert("Sorry wrong answer!");
+      timeLeft -= 5;
       generateQuizQuestion();
+      document.getElementById("answerFeedback").innerHTML="-5 seconds, previous question was Incorrect."
+      // generateQuizQuestion();
+      span.textContent = "-5 seconds previous question was Incorrect";
+      
   }else{
       showScore();
   }
@@ -203,7 +230,6 @@ function checkAnswer(answer){
 
 
 
-
 startButton.addEventListener("click", startQuiz);
 clear.addEventListener("click", startQuiz);
-highscoreSection.addEventListener("click", showHighscore); // not working
+// highscoreSection.addEventListener("click", startQuiz); // not working

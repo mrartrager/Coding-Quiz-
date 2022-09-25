@@ -20,8 +20,8 @@
             <!--staring page, first thing user will see-->
             <section id="welcomePage">
                 <h1 class="welcome">Welcome to my Code Quiz!</h1>
-                <h3 class="nerdy">Enjoy some super extra nerdy questions, goodluck! </h3>     
-                <p class="intro">Answer the following questions before time runs out! Wrong answers will take time off the clock. </p>
+                <h3 class="nerdy">Enjoy some super extra nerdy questions, goodluck!</h3>     
+                <p class="intro">Answer the following 10 questions before time runs out! Wrong answers will take time off the clock! </p>
                 <button id="startQuizBtn" class="start">Start Quiz</button>
                
             </section>
@@ -42,9 +42,10 @@
         <div id="finalScore"></div>
         <input type="text" name="initials" id="initials" placeholder="Initial here, cause you rock!"></input>
         <button type="submit" id="submitButton">Submit</button>
-       
     </div>
 
+    <div id="answerFeedback"></div>
+    <div id="answerFeedback1"></div>
 <!--highscore page-->
     <section id="highScore">
         <div id="highScorePage">
@@ -53,17 +54,12 @@
                 <div id ="Userscore"></div>
                 <h2>Player Initials</h2>
                 <h2>Score</h2>
-                <div>
-                   <a href="C:\Users\Matth\bootcamp\Coding-Quiz-\index2.html"><button id="highScoreBtn" class="viewHighScore" >View High Scores</button>
-                </div>
             </div>
-    <!-- <div id ="Username"></div>
-    <div id ="Userscore"></div> -->
         </div>
         <div id="Reset">
-            <button id="highScoreBtn" class="viewHighScore" >View High Scores</button>
-           <button id="playAgainBtn" onclick="replayQuiz()">Play Again</button>
-            <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
+            <a href="C:\Users\Matth\bootcamp\Coding-Quiz-\index2.html"><button id="highScoreBtn" class="viewHighScore">View High Scores</button>
+           <button id="playAgainBtn">Play Again</button>
+            <button id="clearHighscore">Clear Highscores</button>
         </div>
     </section>
     </div>
