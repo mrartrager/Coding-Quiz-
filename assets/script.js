@@ -12,7 +12,7 @@ let lostGame = document.getElementById("gameover");
 let scoreFinal = document.getElementById("finalScore");
 let submitScoreBtn = document.getElementById("submitButton");
 let userInitials = document.getElementById("initials");
-let highscoreSection = document.getElementById("highscore");
+let highscoreSection = document.getElementById("answerFeedback");
 let highscoreDiv = document.getElementById("highscorePage");
 let userName = document.getElementById("Username");
 let showHighScore = document.getElementById("Userscore");
@@ -70,7 +70,28 @@ let quizQuestions = [{
   OptionB: " Ozmandias gave Dr.Mannhattan his powers on accident ",
   OptionC: " Dr.Manhattan was caught in a radioactive particle test ",
   OptionD: " He's from an alternate universe where everyone has powers ",
-  correctAnswer: "C"}
+  correctAnswer: "C"},
+  {
+  question: "How did Vincent Van Gogh Die?",
+  OptionA: " He cut his ear off and bled out ",
+  OptionB: " A gun shot wound to the belly ",
+  OptionC: " He suffered from a heart attack ",
+  OptionD: " He died of old age ",
+  correctAnswer: "B"},
+  {
+  question: "Out of the options listed, which did Hans Zimmer NOT compose?",
+  OptionA: " No Time for Caution - Interstellar ",
+  OptionB: " Time - Inception ",
+  OptionC: " Light of the Seven - Game of Thrones ",
+  OptionD: " Sea Wall - Blade Runner 2049 ",
+  correctAnswer: "C"},
+  {
+  question: " Out of the options listed, which of these is NOT an HBO show? ",
+  OptionA: " Game of Thrones ",
+  OptionB: " Watchmen ",
+  OptionC: " The Leftovers ",
+  OptionD: " High School Musical: The Musical: The Series ",
+  correctAnswer: "D"}
 ];
 
 
@@ -131,27 +152,29 @@ function showScore() {
   lostGame.style.display = "flex";
   clearInterval(timerInterval);
   userInitials.value = "";
-  finalScoreEl.innerHTML = "you got" + score + " out of " + quizQuestions.length + " correct!";
+  document.getElementById("answerFeedback").innerHTML = "you got " + score + " out of " + quizQuestions.length + " correct!";
+  return highscoreSection;
 }
 
 
 submitScoreBtn.addEventListener("click", function(event){
 event.preventDefault()
-console.log("inside submit button")
 
   if(userInitials.value === "") {
     alert("Ay silly, you can't submit a blank form, enter your initials");
     return false;
   } else {
-    let savedHighscores = JSON.parse(localStorage.getItem("highscore")) || [];
+    let savedHighscores = JSON.parse(localStorage.getItem("answerFeedback")) || [];
     let currentUser = userInitials.value.trim();
     let currentHighscore = {
       name : currentUser,
       score : score
     };
     savedHighscores.push(currentHighscore);
-    localStorage.setItem("highscore", JSON.stringify(savedHighscores));
+    localStorage.setItem("answerFeedback", JSON.stringify(savedHighscores));
     generateHighscores();
+    window.location.reload();
+    return false 
   }
 });
 
@@ -160,7 +183,7 @@ console.log("inside submit button")
 function generateHighscores() {
   userName.innerHTML = "", //userName = document.getElementById("Username")
   showHighScore.innerHTML = "";
-  let highscores = JSON.parse(localStorage.getItem("highscore")) || [];
+  let highscores = JSON.parse(localStorage.getItem("answerFeedback")) || [];
   for (i=0; i < highscores.length; i++){
     let newNameSpan = document.createElement("li");
     let newScoreSpan = document.createElement("li");
@@ -220,7 +243,7 @@ function checkAnswer(answer){
       generateQuizQuestion();
       document.getElementById("answerFeedback").innerHTML="-5 seconds, previous question was Incorrect."
       // generateQuizQuestion();
-      span.textContent = "-5 seconds previous question was Incorrect";
+      // highscoreSection.textContent = "-5 seconds previous question was Incorrect";
       
   }else{
       showScore();
