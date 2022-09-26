@@ -3,8 +3,7 @@
 
 
 ## Desciption 
-    It took me a while to figure out the best approach to this project, I actually ended up having to start over on this because my first approach was no   working at all. I'm glad I started over though because I am happy with the end result. And learned a lot along the way. I met most of the requirements fo  this except having the highscores display on the actual highscore page. The data is kept locally as the application tab in chrome devtools shows, I jus   couldn't get that information to show up on the actual Highscore page unfortunately. However I still am very pleased with how this turned out, both visuall    (especially visually, how about those button animations, if you fail the test, at least you can just hover over the buttons for pure satisfaction instead.  but was also pleased with the functionality of the quiz too. As a graphic designer I want everything I code to look as good as it can with the knowledge o    coding I possess, and as this site could still definitely use some design improvements, I like how I made a coding quiz have a little personality to it There is also some cool "mouse" css styling done as well. I added a text selection css rule for those who like to highlight when they read to add a nic  subtle surprise to the site and I have the cursor switch to a "pointer" when hovering over any button. The functionality of the code quiz I think works wel   too! You can read more about that in the "usage" section of the README.
-
+It took me a while to figure out the best approach to this project, I actually ended up having to start over on this because my first approach was no   workingat all. I'm glad I started over though because I am happy with the end result. And learned a lot along the way. I met most of the requirements fo  this excepthaving the highscores display on the actual highscore page. The data is kept locally as the application tab in chrome devtools shows, I jus   couldn't get thatinformation to show up on the actual Highscore page unfortunately. However I still am very pleased with how this turned out, both visuall    (especiallyvisually, how about those button animations, if you fail the test, at least you can just hover over the buttons for pure satisfaction instead.  but was alsopleased with the functionality of the quiz too. As a graphic designer I want everything I code to look as good as it can with the knowledge o    coding Ipossess, and as this site could still definitely use some design improvements, I like how I made a coding quiz have a little personality to it There is alsosome cool "mouse" css styling done as well. I added a text selection css rule for those who like to highlight when they read to add a nic  subtle surprise tothe site and I have the cursor switch to a "pointer" when hovering over any button. The functionality of the code quiz I think works wel   too! You can readmore about that in the "usage" section of the README.
 
 ## Installation
  
@@ -29,19 +28,24 @@ The functionality and usage of the code quiz is pretty easy to use, but just to 
 
 ## Here are a few screenshots:
 
-# Here is a screenshot of the welcome page 
-![](../../OneDrive/Desktop/welcome%20page%20-%20Copy.png)
+# This is the welcome page:
+![](screenshots/welcome%20page%20-%20Copy.png)
+
+
+# This is the questions that comes up after start quiz:
+![](screenshots/question%20page%20-%20Copy.png)
+
+
+# This is showing that the correct choice was selected:
+![](screenshots/correct%20question%20-%20Copy.png)
+
+
+# This is showing that the incorrect choice was selected:
+![](screenshots/incorrect%20question%20-%20Copy.png)
+
+
+# This is the End Page after completing the test:
+![](screenshots/end%20page%20-%20Copy.png)
 
 
 
-# Here is a screenshot showing the the correct answer was chosen
-![](../../OneDrive/Desktop/correct%20question%20-%20Copy.png)
-
-
-
-# Here is a screenshot showing the incorrect answer was chosen
-![](../../OneDrive/Desktop/incorrect%20question%20-%20Copy.png)
-
-
-# Here is a screenshot of the last page after the questions 
-![](../../OneDrive/Desktop/end%20page%20-%20Copy.png)
