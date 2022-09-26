@@ -18,11 +18,15 @@ The functionality and usage of the code quiz is pretty easy to use, but just to 
 
 
 
-# Here is a link to the deployed application
+# Here is a link to the deployed application:
+
+https://mrartrager.github.io/Coding-Quiz-/
 
 
 
-# Here is a link to my GitHub Repository for this projec
+# Here is a link to my GitHub Repository for this project:
+
+https://github.com/mrartrager/Coding-Quiz-
 
 
 
